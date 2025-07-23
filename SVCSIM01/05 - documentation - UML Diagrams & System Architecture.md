@@ -61,7 +61,7 @@ sequenceDiagram
 
 ```mermaid
 classDiagram
-    class "Manufacturing Controller" {
+    class ManufacturingController {
         +processOrderAcceptance()
         +calculateProductionCapacity()
         +managePositionData()
@@ -70,7 +70,7 @@ classDiagram
         -updateProductionSchedule()
     }
     
-    class "Order Data" {
+    class OrderData {
         +orderNumber
         +customerDescription
         +quantity
@@ -79,7 +79,7 @@ classDiagram
         +productSpecifications
     }
     
-    class "Production Area Data" {
+    class ProductionAreaData {
         +areaCode
         +areaDescription
         +productivityValue
@@ -88,7 +88,7 @@ classDiagram
         +unitOfMeasure
     }
     
-    class "Position Management" {
+    class PositionManagement {
         +positionNumber
         +progressNumber
         +positionStatus
@@ -97,7 +97,7 @@ classDiagram
         +quantityInKilograms
     }
     
-    class "Caliber Configuration" {
+    class CaliberConfiguration {
         +caliberCode
         +trainNumber
         +stationCode
@@ -106,13 +106,13 @@ classDiagram
         +thicknessRange
     }
     
-    "Manufacturing Controller" --> "Order Data"
-    "Manufacturing Controller" --> "Production Area Data"
-    "Manufacturing Controller" --> "Position Management"
-    "Manufacturing Controller" --> "Caliber Configuration"
+    ManufacturingController --> OrderData
+    ManufacturingController --> ProductionAreaData
+    ManufacturingController --> PositionManagement
+    ManufacturingController --> CaliberConfiguration
     
-    "Order Data" --> "Position Management"
-    "Production Area Data" --> "Position Management"
+    OrderData --> PositionManagement
+    ProductionAreaData --> PositionManagement
 ```
 
 ## Main Process Flow
